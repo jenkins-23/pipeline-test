@@ -5,13 +5,13 @@ node {
     def GITHUB_BRANCH="main"
     
     //Retrieve ENV ID values for DEV and QA from "Download attributes from API" json file
-    def VELOCITY_ENV_ID_DEV="abf22e91-6813-45bd-9dc4-47d3d6d7b85c"
-    def VELOCITY_ENV_ID_QA="f5a26083-3128-4f78-a928-ce5074de9e3e"
-    def VELOCITY_ENV_ID_PROD="19b1f3f8-b42d-4359-b373-d0d65b6ad895"
+    def VELOCITY_ENV_ID_DEV="f72392bf-eac7-4b9f-b36e-65717da9c626"
+    def VELOCITY_ENV_ID_QA="5109b5e5-91d5-43a3-a620-5d415fa5803e"
+    def VELOCITY_ENV_ID_PROD="9914bf57-c046-41d5-a3f1-f23ed4346609"
 
     //VELOCITY_APP_NAME must match your Velocity pipeline application name
     def VELOCITY_APP_NAME="pipeline_test"
-    def VELOCITY_APP_ID="df8ffa40-cfdc-42a8-acfd-c87ec4f91b7e"
+    //def VELOCITY_APP_ID="df8ffa40-cfdc-42a8-acfd-c87ec4f91b7e"
 
     //Do not change below this line.
     def GIT_COMMIT
@@ -40,7 +40,7 @@ node {
           tenantId: "5ade13625558f2c6688d15ce",
           versionName: "${currentBuild.displayName}",
           versionExtId: "${currentBuild.displayName}",
-          type: 'Jenkins',
+          type: 'Jenkins(Legacy)',
           environmentId: "${VELOCITY_ENV_ID_DEV}",
           environmentName: 'DEV',
           appName: "${VELOCITY_APP_NAME}",
@@ -56,7 +56,7 @@ node {
           tenantId: "5ade13625558f2c6688d15ce",
           versionName: "${currentBuild.displayName}",
           versionExtId: "${currentBuild.displayName}",
-          type: 'Jenkins',
+          type: 'Jenkins(Legacy)',
           environmentId: "${VELOCITY_ENV_ID_QA}",
           environmentName: 'QA',
           appName: "${VELOCITY_APP_NAME}",
@@ -72,7 +72,7 @@ node {
           tenantId: "5ade13625558f2c6688d15ce",
           versionName: "${currentBuild.displayName}",
           versionExtId: "${currentBuild.displayName}",
-          type: 'Jenkins',
+          type: 'Jenkins(Legacy)',
           environmentId: "${VELOCITY_ENV_ID_QA}",
           environmentName: 'QA',
           appName: "${VELOCITY_APP_NAME}",
