@@ -10,7 +10,7 @@ node {
     def VELOCITY_ENV_ID_PROD="9914bf57-c046-41d5-a3f1-f23ed4346609"
 
     //VELOCITY_APP_NAME must match your Velocity pipeline application name
-    def VELOCITY_APP_NAME="pipeline_test"
+    def VELOCITY_APP_NAME="new_pipeline_test"
     //def VELOCITY_APP_ID="df8ffa40-cfdc-42a8-acfd-c87ec4f91b7e"
 
     //Do not change below this line.
