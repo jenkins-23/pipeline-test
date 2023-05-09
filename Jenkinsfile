@@ -7,7 +7,7 @@ node {
     //Retrieve ENV ID values for DEV and QA from "Download attributes from API" json file
     def VELOCITY_ENV_ID_DEV="abf22e91-6813-45bd-9dc4-47d3d6d7b85c"
     def VELOCITY_ENV_ID_QA="f5a26083-3128-4f78-a928-ce5074de9e3e"
-    
+    def VELOCITY_ENV_ID_PROD="19b1f3f8-b42d-4359-b373-d0d65b6ad895"
 
     //VELOCITY_APP_NAME must match your Velocity pipeline application name
     def VELOCITY_APP_NAME="pipeline_test"
@@ -51,6 +51,22 @@ node {
       ])
    }
    stage ("Deploy to QA") {
+    sleep 10
+    step([$class: 'UploadDeployment',
+          tenantId: "5ade13625558f2c6688d15ce",
+          versionName: "${currentBuild.displayName}",
+          versionExtId: "${currentBuild.displayName}",
+          type: 'Jenkins',
+          environmentId: "${VELOCITY_ENV_ID_QA}",
+          environmentName: 'QA',
+          appName: "${VELOCITY_APP_NAME}",
+	  appID: "${VELOCITY_APP_ID}",
+          description: '[Description ex: Terraform Deployment]',
+          initiator: "admin",
+		  result: 'true'
+      ])
+   }
+   stage ("Deploy to PROD") {
     sleep 10
     step([$class: 'UploadDeployment',
           tenantId: "5ade13625558f2c6688d15ce",
