@@ -18,9 +18,4 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            mail bcc: '', body: 'The Pipeline failed :(', cc: '', from: '', replyTo: '', subject: 'Pipeline Status', to: 'gunu.shrestha@ibm.com'
-        }
-    }
 }
