@@ -7,9 +7,11 @@ node {
     //Retrieve ENV ID values for DEV and QA from "Download attributes from API" json file
     def VELOCITY_ENV_ID_DEV="abf22e91-6813-45bd-9dc4-47d3d6d7b85c"
     def VELOCITY_ENV_ID_QA="f5a26083-3128-4f78-a928-ce5074de9e3e"
+    
 
     //VELOCITY_APP_NAME must match your Velocity pipeline application name
     def VELOCITY_APP_NAME="pipeline_test"
+    def VELOCITY_APP_ID="df8ffa40-cfdc-42a8-acfd-c87ec4f91b7e"
 
     //Do not change below this line.
     def GIT_COMMIT
@@ -27,6 +29,7 @@ node {
            tenantId: "5ade13625558f2c6688d15ce",
            revision: "${GIT_COMMIT}",
            appName: "${VELOCITY_APP_NAME}",
+	   appID: "${VELOCITY_APP_ID}",
            versionName:"${currentBuild.displayName}",
            requestor: "admin", id: "${currentBuild.displayName}"
         )
@@ -41,6 +44,7 @@ node {
           environmentId: "${VELOCITY_ENV_ID_DEV}",
           environmentName: 'DEV',
           appName: "${VELOCITY_APP_NAME}",
+	  appID: "${VELOCITY_APP_ID}",
           description: '[Description ex: Terraform Deployment]',
           initiator: "admin",
 		  result: 'true'
@@ -56,6 +60,7 @@ node {
           environmentId: "${VELOCITY_ENV_ID_QA}",
           environmentName: 'QA',
           appName: "${VELOCITY_APP_NAME}",
+	  appID: "${VELOCITY_APP_ID}",
           description: '[Description ex: Terraform Deployment]',
           initiator: "admin",
 		  result: 'true'
