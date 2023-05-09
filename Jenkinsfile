@@ -5,13 +5,13 @@ node {
     def GITHUB_BRANCH="main"
     
     //Retrieve ENV ID values for DEV and QA from "Download attributes from API" json file
-    def VELOCITY_ENV_ID_DEV="f72392bf-eac7-4b9f-b36e-65717da9c626"
-    def VELOCITY_ENV_ID_QA="5109b5e5-91d5-43a3-a620-5d415fa5803e"
-    def VELOCITY_ENV_ID_PROD="9914bf57-c046-41d5-a3f1-f23ed4346609"
+    def VELOCITY_ENV_ID_DEV="abf22e91-6813-45bd-9dc4-47d3d6d7b85c"
+    def VELOCITY_ENV_ID_QA="f5a26083-3128-4f78-a928-ce5074de9e3e"
+    def VELOCITY_ENV_ID_PROD="e36dbb12-60ba-4247-94bb-828af3d4564b"
 
     //VELOCITY_APP_NAME must match your Velocity pipeline application name
-    def VELOCITY_APP_NAME="new_pipeline_test"
-    //def VELOCITY_APP_ID="df8ffa40-cfdc-42a8-acfd-c87ec4f91b7e"
+    def VELOCITY_APP_NAME="pipeline_test"
+    def VELOCITY_APP_ID="5155a71f-7a62-4b44-b76f-f655bc7d5e06"
 
     //Do not change below this line.
     def GIT_COMMIT
